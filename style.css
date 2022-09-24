@@ -1,0 +1,162 @@
+:root {
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+    --clr-darkBlue: hsl(234, 12%, 34%);
+    --clr-grayBlue: hsl(229, 6%, 66%);
+    --clr-lightGray: hsl(0, 0%, 98%);
+
+    font-family: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h2, p, hr {
+    margin: 0;
+}
+
+img, picture {
+    max-width: 100%;
+}
+
+body {
+    color: var(--clr-grayBlue);
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-lightGray);
+}
+
+.container {
+    width: 95%;
+    max-width: 68.75rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.reliable {
+    color: var(--clr-darkBlue);
+    font-size: 1.6em;
+    font-weight: 200;
+}
+
+.powered-by {
+    color: var(--clr-darkBlue);
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.info-text {
+    max-width: 55ch;
+    margin: 0 auto;
+}
+
+.features {
+    display: grid;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.feature-card {
+    position: relative;
+    display: grid;
+    text-align: left;
+    background-color: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 1.5rem -.8rem #ccccff;
+    padding: 1.5rem;
+}
+
+.feature-card > hr {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.feature-card.supervisor > hr {
+    background-color: var(--clr-cyan);
+}
+
+.feature-card.team > hr {
+    background-color: var(--clr-red);
+}
+
+.feature-card.karma > hr {
+    background-color: var(--clr-orange);
+}
+
+.feature-card.calculator > hr {
+    background-color: var(--clr-blue);
+}
+
+.feature-heading {
+    color: var(--clr-darkBlue);
+    font-size: 1.3em;
+    padding-bottom: .3rem;
+}
+
+.feature-text {
+    font-size: .8rem;
+    line-height: 1.8;
+    padding-bottom: 1.8rem;
+}
+
+.feature-img {
+    place-self: end;
+}
+
+@media (min-width: 35rem) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 55rem) {
+    .reliable, .powered-by {
+        font-size: 2.2rem;
+    }
+
+    .features {
+        margin-top: 4rem;
+        gap: 1.875rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        "superv team cal"
+        "superv karma cal"
+    }
+
+    .feature-card.supervisor {
+        grid-area: superv;
+        align-self: center;
+    }
+    
+    .feature-card.team {
+        grid-area: team;
+
+    }
+    
+    .feature-card.karma {
+        grid-area: karma;
+    }
+    
+    .feature-card.calculator {
+        grid-area: cal;
+        align-self: center;
+    }
+
+    .feature-card {
+        max-width: 21.875rem;
+    }
+}
