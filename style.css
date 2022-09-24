@@ -89,7 +89,8 @@ body {
     to {top: 0;}
 }
 
-.feature-card > hr {
+.feature-card::before {
+    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -98,19 +99,19 @@ body {
     height: 4px;
 }
 
-.feature-card.supervisor > hr {
+.feature-card.cyan::before {
     background-color: var(--clr-cyan);
 }
 
-.feature-card.team > hr {
+.feature-card.red::before {
     background-color: var(--clr-red);
 }
 
-.feature-card.karma > hr {
+.feature-card.orange::before {
     background-color: var(--clr-orange);
 }
 
-.feature-card.calculator > hr {
+.feature-card.blue::before {
     background-color: var(--clr-blue);
 }
 
@@ -151,29 +152,27 @@ body {
     }
 
     .feature-card {
+        max-width: 21.875rem;
         padding: 2rem;
     }
 
-    .feature-card.supervisor {
+    .feature-card.cyan {
         grid-area: superv;
         align-self: center;
     }
     
-    .feature-card.team {
+    .feature-card.red {
         grid-area: team;
 
     }
     
-    .feature-card.karma {
+    .feature-card.orange {
         grid-area: karma;
     }
     
-    .feature-card.calculator {
+    .feature-card.blue {
         grid-area: cal;
         align-self: center;
     }
 
-    .feature-card {
-        max-width: 21.875rem;
-    }
 }
