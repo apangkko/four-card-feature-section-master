@@ -39,7 +39,7 @@ body {
     max-width: 68.75rem;
     padding: 5rem 2rem;
     text-align: center;
-    animation: fadeIn .5s ease-in-out;
+    animation: fadeIn .8s ease-in-out;
 }
 
 @keyframes fadeIn {
